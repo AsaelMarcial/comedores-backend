@@ -1,5 +1,6 @@
 package com.voluntariado.comedores.configurations;
 
+import com.voluntariado.comedores.entities.Becado;
 import com.voluntariado.comedores.entities.User;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -11,8 +12,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 public class RestConfiguration implements RepositoryRestConfigurer {
 
     @Override
-    public void configureRepositoryRestConfiguration(
-            RepositoryRestConfiguration config, CorsRegistry cors) {
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         config.exposeIdsFor(User.class);
+        config.exposeIdsFor(Becado.class);
     }
 }
